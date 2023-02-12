@@ -15,7 +15,7 @@ generator erd {
 }
 
 model Notification {
-  id          String    @id @default(cuid())
+  id          String    @id
   content     String
   category    String
   recipientId String
