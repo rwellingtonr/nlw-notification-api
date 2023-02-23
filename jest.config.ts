@@ -1,6 +1,14 @@
-export default {
+import { Config } from 'jest';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { compilerOptions } from './tsconfig.json';
+
+const mapper = pathsToModuleNameMapper(compilerOptions.paths, {
+  prefix: '<rootDir>/',
+});
+
+const config: Config = {
   moduleFileExtensions: ['js', 'json', 'ts'],
-  rootDir: 'src',
+  moduleNameMapper: mapper,
   testRegex: '.*\\.spec\\.ts$',
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
@@ -9,3 +17,5 @@ export default {
   coverageDirectory: '../coverage',
   testEnvironment: 'node',
 };
+
+export default config;
