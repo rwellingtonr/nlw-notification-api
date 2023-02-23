@@ -12,8 +12,4 @@ describe('Notification', () => {
 
     expect(notification).toBeTruthy();
   });
-
-  // it('Should ', () => {
-  //   expect();
-  // });
 });
