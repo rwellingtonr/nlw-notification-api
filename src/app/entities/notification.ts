@@ -1,4 +1,3 @@
-import { randomUUID } from 'crypto';
 import { BaseEntity } from './baseEntity';
 import { Replace } from './helper/replace';
 import { Content } from './notification/content';
@@ -8,6 +7,7 @@ export interface NotificationProps {
   category: string;
   readAt?: Date | null;
   createdAt: Date;
+  canceledAt?: Date;
   recipientId: string;
 }
 
@@ -36,8 +36,12 @@ export class Notification extends BaseEntity {
   get category(): string {
     return this.props.category;
   }
-  set readAt(readAt: Date) {
-    this.props.readAt = readAt;
+
+  read() {
+    this.props.readAt = new Date();
+  }
+  unread() {
+    this.props.readAt = null;
   }
 
   get readAt(): Date {
@@ -56,5 +60,13 @@ export class Notification extends BaseEntity {
 
   get recipientId(): string {
     return this.props.recipientId;
+  }
+
+  get canceledAt() {
+    return this.props.canceledAt;
+  }
+
+  cancel() {
+    this.props.canceledAt = new Date();
   }
 }
