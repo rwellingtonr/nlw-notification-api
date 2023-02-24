@@ -14,9 +14,9 @@ import { GetRecipientNotifications } from '~/app/use-cases/getRecipientNotificat
   providers: [
     SendNotification,
     CancelNotification,
+    GetRecipientNotifications,
     UnreadNotification,
     ReadNotification,
-    GetRecipientNotifications,
     CountRecipientNotification,
   ],
 })

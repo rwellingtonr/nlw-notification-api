@@ -61,14 +61,14 @@ export class NotificationController {
 
   @Patch(':id/read')
   async read(@Param('id') id: string) {
-    await this.unreadNotificationService.execute({
+    await this.readNotificationService.execute({
       notificationId: id,
     });
   }
 
   @Patch(':id/unread')
   async unread(@Param('id') id: string) {
-    await this.readNotificationService.execute({
+    await this.unreadNotificationService.execute({
       notificationId: id,
     });
   }

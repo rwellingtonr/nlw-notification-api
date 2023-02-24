@@ -8,6 +8,8 @@ export class NotificationPresentation {
         category: notification.category,
         content: notification.content,
         recipientId: notification.recipientId,
+        canceledAt: notification.canceledAt,
+        readAt: notification.readAt,
       },
     };
     return notificationResponse;

@@ -22,6 +22,7 @@ export class ReadNotification {
     }
 
     notification.read();
+    console.log(notification);
     await this.notificationRepository.update(notification);
   }
 }
