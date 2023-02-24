@@ -7,7 +7,9 @@ import { CancelNotification } from '~/app/use-cases/cancelNotification';
 import { UnreadNotification } from '~/app/use-cases/unreadNotification';
 import { ReadNotification } from '~/app/use-cases/readNotification';
 import { CountRecipientNotification } from '~/app/use-cases/countRecipientNotifications';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Notification')
 @Controller('notification')
 export class NotificationController {
   constructor(
