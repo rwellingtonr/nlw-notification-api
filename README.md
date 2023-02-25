@@ -17,7 +17,6 @@ cp .env.example .env
 # run locally
 
 npm run start:dev
-
 ```
 
 ## Migrations
